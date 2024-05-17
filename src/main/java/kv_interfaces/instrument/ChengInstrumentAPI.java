@@ -181,8 +181,10 @@ public class ChengInstrumentAPI {
 		// if ADD/UPDATE/PUT, generate a new id
 		// if DELETE, use NOP_WRITE_ID (because the next INSERT/PUT will use NOP_WRITE_ID as prev_write)
 		// FIXME: this might be a problem here for the delete
-		long wid = (type == WRITE_TYPE.DELETE) ? LibConstants.DELETE_WRITE_ID : ChengIdGenerator.genWriteId();
-		
+		// long wid = (type == WRITE_TYPE.DELETE) ? LibConstants.DELETE_WRITE_ID : ChengIdGenerator.genWriteId();
+		long wid = (type == WRITE_TYPE.DELETE) ? LibConstants.DELETE_WRITE_ID : LibConstants.UNIVERSAL_WRITE_ID;
+		txnid = LibConstants.UNIVERSAL_TXN_ID;
+
 		// 2. encode a value (key, txnid, wid) for next read
 		// len + "," + (key + txnid + wid) + real_value
 		String encoded_val = OpEncoder.encodeCobraValue(val, txnid, wid);
@@ -204,6 +206,8 @@ public class ChengInstrumentAPI {
 		final String real_val;
 		final long write_txnid, write_id, key_hash, value_hash;
 		ChengLogger logger = ChengLogger.getInstance();
+
+		txnid = LibConstants.UNIVERSAL_TXN_ID;
 
 		if (val != null) {
 			OpEncoder op = OpEncoder.decodeCobraValue(val);

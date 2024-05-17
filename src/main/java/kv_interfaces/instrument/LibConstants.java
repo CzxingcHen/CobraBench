@@ -15,4 +15,7 @@ public class LibConstants {
 	public static long MISSING_TXN_ID = 0xadeafbeeL;
 
 	public static boolean DEBUG_LIB_FLAG = true;
+
+	public static long UNIVERSAL_WRITE_ID = 0xabddefeeL;
+	public static long UNIVERSAL_TXN_ID = 0xabddefeeL;
 }
