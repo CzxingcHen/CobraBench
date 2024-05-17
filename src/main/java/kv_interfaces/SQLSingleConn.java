@@ -41,6 +41,7 @@ public class SQLSingleConn {
 			this.conn = DriverManager.getConnection(Config.get().DB_URL, Config.get().PG_USERNAME, Config.get().PG_PASSWORD);
 			this.conn.setAutoCommit(false);
 			this.conn.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
+			// this.conn.setTransactionIsolation(Connection.TRANSACTION_REPEATABLE_READ);
 			this.writeBuffer = null;
 			this.writeBufferSize = 0;
 		} catch (Exception e) {

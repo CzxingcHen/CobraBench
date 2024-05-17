@@ -2,8 +2,10 @@
 ---
 # --------------- DB Server Related -----------------
 # 0-chengKV, 1-google, 2-rocks, 3-postgres, 5-Tapir, 6-CockroachDB
-LIB_TYPE: 2
-DB_URL: "jdbc:postgresql://172.31.31.90:5432/testdb"
+LIB_TYPE: 3
+DB_URL: "jdbc:postgresql://127.0.0.1:5432/testdb"
+PG_USERNAME: postgres
+PG_PASSWORD: postgres
 
 # ---------------- Client library -------------------
 USE_INSTRUMENT: true

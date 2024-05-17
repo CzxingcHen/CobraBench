@@ -1,0 +1,3 @@
+DROP DATABASE testdb; CREATE DATABASE testdb; ALTER DATABASE testdb OWNER TO postgres;
+
+

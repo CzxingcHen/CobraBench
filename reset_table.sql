@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS ycsb;
+CREATE TABLE ycsb (
+  key VARCHAR PRIMARY KEY,
+  value VARCHAR
+);
