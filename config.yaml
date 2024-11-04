@@ -2,7 +2,7 @@
 ---
 # --------------- DB Server Related -----------------
 # 0-chengKV, 1-google, 2-rocks, 3-postgres, 5-Tapir, 6-CockroachDB
-LIB_TYPE: 3
+LIB_TYPE: 2
 DB_URL: "jdbc:postgresql://127.0.0.1:5432/testdb"
 PG_USERNAME: postgres
 PG_PASSWORD: postgres
@@ -29,7 +29,7 @@ SERVER_PORT: 8980
 
 # ----------------- benchmark related ---------------
 # 0-CHENG, 1-TPCC, 2-YCSB, 3-RUBIS, 4-TWITTER
-BENCH_TYPE: 2
+BENCH_TYPE: 4
 
 # simply skip the data loading or testing process
 SKIP_LOADING: false
@@ -39,7 +39,7 @@ SKIP_TESTING: false
 DONT_RECORD_LOADING: true
 REDIS_ADDRESS: "redis://172.31.31.90/0"
 
-TXN_NUM: 10000
+TXN_NUM: 5000
 THREAD_NUM: 8
 CLIENT_NUM: 1
 # slow run: sleep this amount of milliseconds after sending every THROUGHPUT_PER_WAIT transaction
